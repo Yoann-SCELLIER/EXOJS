@@ -7,6 +7,7 @@
 // On déclare deux variables dans lesquelles seront stokées une valeur minimale et une maximale
 let min = 1;
 let max = 50;
+let attempt = 5;
 
 //Math.floor nous permet de générer un chiffre sans virgule et Math.random randomise le processuss
 let random = Math.floor(Math.random() * (max - min)) + min;
@@ -15,18 +16,21 @@ let random = Math.floor(Math.random() * (max - min)) + min;
 let userNumber = prompt("Découvres le bon numéro");
 
 // Nous ne conaissons pas le nombre de tentatives de l'utilisateur, on utilise une boucle WHILE
-while (userNumber != random) {
+while (userNumber != random && attempt > 0) {
     // Dans cette boucle, nous déterminons les conditions (+ / -)    
     if (userNumber > random) {
 
         alert("TROP HAUT!");
-        
+        attempt --;
+
     } else {
 
         alert("TROP BAS!");
+        attempt --;
+        
     }
-        userNumber = prompt("Découvres le bon numéro");
 
+    userNumber = prompt("Découvres le bon numéro");
 }
 
 // On sort de la boucle quand l'utilisateur trouve la bonne réponse
@@ -35,3 +39,9 @@ if (userNumber == random) {
     alert("BRAVO!");
 
 } 
+
+// Nombre de tentatives maximale atteinte
+else ( attempt == 0)
+{
+  alert('Nombre de tentatives maximale atteinte');
+}
