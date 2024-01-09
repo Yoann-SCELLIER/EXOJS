@@ -3,6 +3,18 @@
 // On déclare une variable let (pour un chiffre déterminé)
 // let number = 10;
 
+// La fonction retry() propose à l'utilisateur de rententer sa chance, elle contient un refresh (location.reload()) natif
+function retry()  {
+
+    let result = confirm("Voulez-vous rejouer?");
+
+    if(result)  {
+        location.reload()
+    } else {
+        alert("Merci d'avoir joué");
+    }
+}
+
 // Pour un nombre aléatoire
 // On déclare deux variables dans lesquelles seront stokées une valeur minimale et une maximale
 let min = 1;
@@ -37,6 +49,7 @@ while (userNumber != random && attempt > 0) {
 if (userNumber == random) {
 
     alert("BRAVO!");
+    retry()
 
 } 
 
@@ -46,5 +59,6 @@ else (attempt == 0)
 {
 
   alert('Nombre de tentatives maximale atteinte');
-  
+  retry()
+
 }
