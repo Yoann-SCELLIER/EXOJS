@@ -41,7 +41,10 @@ if (userNumber == random) {
 } 
 
 // Nombre de tentatives maximale atteinte
-else ( attempt == 0)
+else (attempt == 0)
+
 {
+
   alert('Nombre de tentatives maximale atteinte');
+  
 }
